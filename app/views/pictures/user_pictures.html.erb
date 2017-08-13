@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row center">
+    <h1>Memes Gallery</h1>
+  </div>
+</div>
+
+<div class="row fixed">
+    <div class="col s4 offset-s4 red accent-3">
+      <% @pictures.each do |picture| %>
+        <div class="card hoverable">
+          <div class="card-image">
+            <%= image_tag picture.image.url, class: "responsive-img" %>
+            <span class="card-title black-text bold"><%= picture.title %></span>
+          </div> <!-- Closing div card-image -->
+          <div class="card-content">
+            <i class="left-align small material-icons"><%= link_to 'remove_red_eye', picture %></i>
+            <i class="left-align small material-icons"><%= link_to 'edit', edit_picture_path(picture) %></i>
+            <i class="left-align small material-icons"><%= link_to 'delete', picture, method: :delete, data: { confirm: 'Are you sure?' } %></i>
+          <div class="right-align">
+            <i class="small material-icons"><%= link_to "home", root_path %></i>
+          </div>
+          </div>
+
+        </div> <!-- Closing card div -->
+      <% end %>
+    </div> <!-- Closing col 4 div offset-s4 -->
+</div> <!-- Closing row div -->

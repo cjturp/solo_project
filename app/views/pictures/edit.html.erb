@@ -1,6 +1,14 @@
-<h1>Editing Picture</h1>
-
-<%= render 'form', picture: @picture %>
-
-<%= link_to 'Show', @picture %> |
-<%= link_to 'Back', pictures_path %>
+<div class="container">
+	<div class="row">
+		<div class="col s6">
+			<h1>Edit Your Meme</h1>
+		</div><br><br>
+		<div class="col s6">
+			<%= render 'form', picture: @picture %>
+		</div>
+		<div class="col s12">
+			<%= link_to 'Show', @picture, class: "waves-effect waves-light btn" %>
+			<%= link_to 'Back', pictures_path, class: "waves-effect waves-light btn" %>
+		</div>
+	</div>
+</div>
